@@ -66,3 +66,21 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+@media  only  screen  and (min-width:200px) and (max-width:575px){
+/* basic_info_from */
+   
+
+  .bsicfom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 80%;
+    margin-left: 10%;
+    height: 100vh;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+  }
+  /* basic_info_from */
+}

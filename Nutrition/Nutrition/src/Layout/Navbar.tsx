@@ -14,6 +14,9 @@ const Navbar:React.FC = () =>{
   const [view, setView] = useState("login");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [goal, setGoal] = useState("");
+
+
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -111,29 +114,85 @@ const Navbar:React.FC = () =>{
       )}
 
       {view === "register" && (
-        <div className="signup-container">
-          <div className="signup-form">
-            <h2>Register</h2>
-            <form onSubmit={handleSignupSubmit}>
-              <div className="mb-3">
-                <label className="form-label">Username</label>
-                <input type="text" className="form-control" required />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Email</label>
-                <input type="email" className="form-control" required />
-              </div>
-              <div className="mb-3">
-                <label className="form-label">Password</label>
-                <input type="password" className="form-control" required />
-              </div>
-              <button type="submit" className="btn">Register</button>
-              <div className="mt-3 text-center">
-                <a href="#" onClick={() => setView("login")}>Back to Login</a>
-              </div>
-            </form>
+      <div className="signup-container">
+      <div className="signup-form">
+        <h2>Register</h2>
+        <form onSubmit={handleSignupSubmit}>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input type="text" className="form-control" required />
           </div>
-        </div>
+          <div className="mb-3">
+            <label className="form-label">Date of Birth</label>
+            <input type="date" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Gender</label>
+            <select className="form-control" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input type="email" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Phone Number</label>
+            <input type="tel" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Height (cm)</label>
+            <input type="number" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Weight (kg)</label>
+            <input type="number" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Goal</label>
+            <select 
+              className="form-control" 
+              required 
+              value={goal} 
+              onChange={(e) => setGoal(e.target.value)}
+            >
+              <option value="">Select Goal</option>
+              <option value="Athletic Body">Athletic Body</option>
+              <option value="Weight Loss">Weight Loss</option>
+              <option value="Weight Gain">Weight Gain</option>
+              <option value="Healthy Body">Healthy Body</option>
+            </select>
+          </div>
+          {(goal === "Weight Loss" || goal === "Weight Gain") && (
+            <div className="mb-3">
+              <label className="form-label">Target Weight (kg)</label>
+              <input type="number" className="form-control" required />
+            </div>
+          )}
+          <div className="mb-3">
+            <label className="form-label">Username</label>
+            <input type="text" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input type="password" className="form-control" required />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Confirm Password</label>
+            <input type="password" className="form-control" required />
+          </div>
+          <button type="submit" className="btn">Register</button>
+          <div className="mt-3 text-center">
+            <a href="#" onClick={() => setView("login")}>
+              Back to Login
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
       )}
 
       {view === "otp" && (
