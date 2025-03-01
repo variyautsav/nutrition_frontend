@@ -174,10 +174,6 @@ const Lending:React.FC<Iprops> = (props) =>{
             <Footer></Footer>
             </section>
 
-
-                
-               
-                
             </>
     )
 }

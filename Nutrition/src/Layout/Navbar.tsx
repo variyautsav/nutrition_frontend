@@ -62,15 +62,15 @@ const Navbar:React.FC = () =>{
         </li>
         <li className="nav-item">
           
-          <Link to="/product" className="nav-link active">Blogs</Link>
+          <Link to="/Dashboard" className="nav-link active">Meal Plan</Link>
         </li>
         
         <li className="nav-item">
-        <Link to="/contect" className="nav-link active">Contect Us</Link>
+        <Link to="/Contect" className="nav-link active">Contect Us</Link>
         </li>
 
         <li className="nav-item">
-        <Link to="/contect" className="nav-link active ">About Us</Link>
+        <Link to="/About" className="nav-link active ">About Us</Link>
         </li>
 
         <div className="loginbtn">
@@ -92,8 +92,8 @@ const Navbar:React.FC = () =>{
             <h2>Login</h2>
             <form onSubmit={handleLoginSubmit}>
               <div className="mb-3">
-                <label className="form-label">Username</label>
-                <input type="text" className="form-control" required />
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" required />
               </div>
               <div className="mb-3">
                 <label className="form-label">Password</label>
